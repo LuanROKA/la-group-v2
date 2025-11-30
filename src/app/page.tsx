@@ -1,65 +1,222 @@
+"use client";
 import Image from "next/image";
+import Link from "next/link";
+import SocietyForm from "@/components/SocietyForm";
+import AssociateForm from "@/components/AssociateForm";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen bg-white text-foreground font-sans selection:bg-black selection:text-white">
+      {/* --- HEADER --- */}
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+        <div className="max-w-[1100px] mx-auto px-4 py-4 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            {/* Logo "L" supprimé ici */}
+            <span className="font-serif text-xl font-bold tracking-tight text-black">L&A Group</span>
+          </Link>
+          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+            <Link href="#apropos" className="hover:text-black transition-colors">À propos</Link>
+            <Link href="#equipe" className="hover:text-black transition-colors">Équipe</Link>
+            <Link href="#societes" className="hover:text-black transition-colors">Portefeuille</Link>
+            <Link href="#contact" className="px-5 py-2.5 rounded-full border border-black text-black font-semibold hover:bg-black hover:text-white transition-all duration-300">
+              Contact
+            </Link>
+          </nav>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </header>
+
+      {/* --- HERO --- */}
+      <section className="py-20 md:py-24 border-b border-gray-100">
+        <div className="max-w-[1100px] mx-auto px-4 grid lg:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
+          <div>
+            <span className="text-xs font-bold tracking-[0.15em] text-gray-500 uppercase mb-4 block">Groupe d'actionnaires</span>
+            <h1 className="font-serif text-5xl md:text-6xl font-bold leading-[1.1] text-black mb-6">
+              Structurer, accompagner et investir dans l'ambition.
+            </h1>
+            <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-xl">
+              L&A Group identifie des sociétés à fort potentiel pour créer de la valeur durable avec nos associés investisseurs.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link href="#inscription" className="px-7 py-3.5 bg-black text-white rounded-lg font-semibold shadow-lg hover:-translate-y-1 transition-transform">
+                Inscrire ma société
+              </Link>
+              <Link href="#associes" className="px-7 py-3.5 border border-gray-300 text-black rounded-lg font-semibold hover:border-black hover:bg-gray-50 transition-colors">
+                Devenir associé
+              </Link>
+            </div>
+          </div>
+          <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-xl">
+            <h3 className="font-serif text-xl font-semibold mb-6 text-black">Chiffres clés (cibles)</h3>
+            <div className="grid grid-cols-3 divide-x divide-gray-100">
+              <div className="px-4 text-center first:pl-0">
+                <div className="font-bold text-xl text-black">5-10</div>
+                <div className="text-[10px] text-gray-400 uppercase font-bold mt-1">Dossiers/an</div>
+              </div>
+              <div className="px-4 text-center">
+                <div className="font-bold text-xl text-black">45%</div>
+                <div className="text-[10px] text-gray-400 uppercase font-bold mt-1">Part max</div>
+              </div>
+              <div className="px-4 text-center last:pr-0">
+                <div className="font-bold text-xl text-black">10 ans</div>
+                <div className="text-[10px] text-gray-400 uppercase font-bold mt-1">Horizon</div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* --- A PROPOS --- */}
+      <section id="apropos" className="py-20">
+        <div className="max-w-[1100px] mx-auto px-4">
+          <h2 className="font-serif text-3xl font-bold mb-3 text-black">À propos</h2>
+          <p className="text-gray-500 text-lg mb-12">Un groupe, une gouvernance, une exigence.</p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-8 rounded-xl border border-gray-200 bg-white">
+                <h3 className="font-serif text-xl font-bold mb-3">Holding & Gouvernance</h3>
+                <p className="text-gray-600 text-sm">Actionnaire de référence : stratégie long terme et accompagnement opérationnel.</p>
+            </div>
+            <div className="p-8 rounded-xl border border-gray-200 bg-white">
+                <h3 className="font-serif text-xl font-bold mb-3">Investisseurs Associés</h3>
+                <p className="text-gray-600 text-sm">Co-investissement dans les sociétés du portefeuille selon votre thèse.</p>
+            </div>
+            <div className="p-8 rounded-xl border border-gray-200 bg-white">
+                <h3 className="font-serif text-xl font-bold mb-3">Accélération</h3>
+                <p className="text-gray-600 text-sm">Structuration de la croissance et accès à des synergies groupe.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- EQUIPE --- */}
+      <section id="equipe" className="py-20 border-t border-gray-100">
+        <div className="max-w-[1100px] mx-auto px-4">
+          <h2 className="font-serif text-3xl font-bold mb-3 text-black">Notre équipe</h2>
+          <p className="text-gray-500 text-lg mb-12">Ceux qui font grandir la vision.</p>
+          
+          <div className="max-w-sm border border-gray-200 rounded-xl p-6 bg-white hover:shadow-lg transition-shadow">
+             <div className="relative w-full aspect-square mb-6 overflow-hidden rounded-lg bg-gray-100">
+               <Image
+                 src="/team/luan-roka.jpg"
+                 alt="Luan Roka PDG"
+                 fill
+                 className="object-cover"
+               />
+             </div>
+             <h3 className="font-serif text-xl font-bold mb-2 text-black">ROKA Luan — PDG</h3>
+             <p className="text-gray-600 text-sm leading-relaxed">
+               Fondateur et dirigeant de L&A Group. Entrepreneur ambitieux pilotant la vision et la stratégie d'investissement du groupe.
+             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* --- PORTFOLIO --- */}
+      <section id="societes" className="py-20 bg-gray-50 border-y border-gray-200">
+        <div className="max-w-[1100px] mx-auto px-4">
+          <h2 className="font-serif text-3xl font-bold mb-3 text-black">Portefeuille</h2>
+          <p className="text-gray-500 text-lg mb-12">Découvrez les participations actives.</p>
+          <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+            <div className="grid lg:grid-cols-2">
+              <div className="p-10 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-gray-100">
+                <h3 className="font-serif text-3xl font-bold mb-4 text-black">NUVIO</h3>
+                <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+                  Agent assistant IA autonome pour la gestion et l’automatisation des tâches d’entreprise. 
+                </p>
+                <div className="flex gap-3">
+                  <span className="px-4 py-1.5 bg-blue-50 text-blue-700 text-xs font-bold rounded-full border border-blue-100">SaaS</span>
+                  <span className="px-4 py-1.5 bg-purple-50 text-purple-700 text-xs font-bold rounded-full border border-purple-100">IA</span>
+                </div>
+              </div>
+              
+              <div className="bg-gray-900 relative min-h-[350px] group overflow-hidden">
+                <Image 
+                   src="/nuvio/dashboard.png" 
+                   alt="Nuvio Dashboard"
+                   fill
+                   className="object-cover object-top opacity-90 transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- FORMULAIRE INSCRIPTION SOCIETE --- */}
+      <section id="inscription" className="py-20">
+        <div className="max-w-[1100px] mx-auto px-4">
+          <h2 className="font-serif text-3xl font-bold mb-3 text-black">Inscrire sa société</h2>
+          <p className="text-gray-500 text-lg mb-8">Présentez votre entreprise pour une étude de candidature.</p>
+          <SocietyForm />
+        </div>
+      </section>
+
+      {/* --- FORMULAIRE ASSOCIES --- */}
+      <section id="associes" className="py-20 bg-gray-50 border-y border-gray-200">
+        <div className="max-w-[1100px] mx-auto px-4 grid md:grid-cols-2 gap-12">
+          <div>
+            <h2 className="font-serif text-3xl font-bold mb-3 text-black">Devenir associé</h2>
+            <p className="text-gray-500 text-lg mb-6">Rejoignez le tour de table et co-investissez.</p>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              En rejoignant L&A Group, vous accédez à un flux qualifié d'opportunités d'investissement et bénéficiez de notre structure de gestion.
+            </p>
+          </div>
+          <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+            <AssociateForm />
+          </div>
+        </div>
+      </section>
+
+      {/* --- PARTENAIRES TEASER --- */}
+      <section className="py-20 bg-black text-white text-center">
+         <div className="max-w-2xl mx-auto px-4">
+            <h2 className="font-serif text-3xl font-bold mb-6">Experts & Talents</h2>
+            <p className="text-gray-300 text-lg mb-8">
+              Vous êtes expert technique, growth marketer ou closer ? Rejoignez notre collectif 
+              <strong> Partenaires à la Performance</strong>.
+            </p>
+            <Link href="/partenaires" className="inline-block px-8 py-4 bg-white text-black rounded-full font-bold hover:bg-gray-100 transition">
+               Découvrir le programme &rarr;
+            </Link>
+         </div>
+      </section>
+
+      {/* --- CONTACT --- */}
+      <section id="contact" className="py-20">
+        <div className="max-w-[1100px] mx-auto px-4">
+           <h2 className="font-serif text-3xl font-bold mb-12">Contact</h2>
+           <div className="grid md:grid-cols-3 gap-6">
+              <div className="p-6 border border-gray-200 rounded-xl">
+                 <strong className="block mb-2 text-black">Email</strong>
+                 <a href="mailto:contact.l.et.associes.group@gmail.com" className="text-gray-600 hover:text-black">contact.l.et.associes.group@gmail.com</a>
+              </div>
+              <div className="p-6 border border-gray-200 rounded-xl">
+                 <strong className="block mb-2 text-black">Téléphone</strong>
+                 <p className="text-gray-600">07 85 64 47 48</p>
+              </div>
+              <div className="p-6 border border-gray-200 rounded-xl bg-white hover:border-black transition-colors">
+                 <strong className="block mb-2 text-black">Social</strong>
+                 <a 
+                   href="https://www.instagram.com/l_associes_group/" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   className="text-gray-600 hover:text-black flex items-center gap-2"
+                 >
+                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                   Suivre sur Instagram
+                 </a>
+              </div>
+           </div>
+        </div>
+      </section>
+
+      {/* --- FOOTER --- */}
+      <footer className="py-12 border-t border-gray-200 bg-gray-50 text-center text-sm text-gray-500">
+        <p>© {new Date().getFullYear()} L&A Group. Tous droits réservés.</p>
+        <div className="mt-4 space-x-4">
+           <Link href="/mentions" className="hover:text-black">Mentions légales</Link>
+           <Link href="/confidentialite" className="hover:text-black">Confidentialité</Link>
+        </div>
+      </footer>
+    </main>
   );
 }
