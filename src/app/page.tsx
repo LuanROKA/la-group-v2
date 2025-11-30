@@ -57,7 +57,7 @@ export default function Home() {
                 <div className="text-[10px] text-gray-400 uppercase font-bold mt-1">Part max</div>
               </div>
               <div className="px-4 text-center last:pr-0">
-                <div className="font-bold text-xl text-black">De 1 à 10 ans</div>
+                <div className="font-bold text-xl text-black">1-10 ans</div>
                 <div className="text-[10px] text-gray-400 uppercase font-bold mt-1">Horizon</div>
               </div>
             </div>
