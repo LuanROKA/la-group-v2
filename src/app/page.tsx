@@ -46,7 +46,7 @@ export default function Home() {
             </div>
           </div>
           <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-xl">
-            <h3 className="font-serif text-xl font-semibold mb-6 text-black">Chiffres clés (cibles)</h3>
+            <h3 className="font-serif text-xl font-semibold mb-6 text-black">Chiffres clés</h3>
             <div className="grid grid-cols-3 divide-x divide-gray-100">
               <div className="px-4 text-center first:pl-0">
                 <div className="font-bold text-xl text-black">5-10</div>
@@ -57,7 +57,7 @@ export default function Home() {
                 <div className="text-[10px] text-gray-400 uppercase font-bold mt-1">Part max</div>
               </div>
               <div className="px-4 text-center last:pr-0">
-                <div className="font-bold text-xl text-black">10 ans</div>
+                <div className="font-bold text-xl text-black">De 1 à 10 ans</div>
                 <div className="text-[10px] text-gray-400 uppercase font-bold mt-1">Horizon</div>
               </div>
             </div>
