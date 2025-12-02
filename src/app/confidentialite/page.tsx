@@ -4,7 +4,7 @@ export default function Confidentialite() {
   return (
     <main className="max-w-4xl mx-auto py-20 px-4 text-gray-800 font-sans">
       <h1 className="text-4xl font-serif font-bold mb-8">Politique de Confidentialité</h1>
-      <p className="mb-6">Chez <strong>[NOM DE VOTRE ENTREPRISE]</strong>, la protection de vos données personnelles est une priorité.</p>
+      <p className="mb-6">Chez <strong>L&A Group</strong>, la protection de vos données personnelles est une priorité.</p>
 
       <section className="mb-8">
         <h2 className="text-2xl font-bold mb-4">1. Données collectées</h2>
