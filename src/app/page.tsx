@@ -65,7 +65,7 @@ export default function Home() {
           <StatCard 
             number="1-10 ans" 
             label="Horizon" 
-            subtext="Confiance renouvelée"
+            subtext="Terme"
           />
           </div>
           </div>
