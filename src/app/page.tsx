@@ -1,4 +1,6 @@
 "use client";
+import StatCard from '@/components/StatCard';
+import BrandLogo from '@/components/BrandLogo';
 import Image from "next/image";
 import Link from "next/link";
 import SocietyForm from "@/components/SocietyForm";
@@ -12,10 +14,9 @@ export default function Home() {
         <div className="max-w-[1100px] mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             {/* Logo "L" supprimé ici */}
-                      {/* On crée une boîte de 200px de large (w-[200px]) */}
-{/* On laisse la hauteur automatique */}
-<div className="w-[180px] md:w-[220px] relative">
-  <Logo className="w-full h-auto text-black" />
+       {/* On donne une largeur confortable pour que le logo soit lisible */}
+<div className="w-[140px] md:w-[180px] shrink-0">
+  <BrandLogo className="w-full h-auto text-black" />
 </div>
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
@@ -49,24 +50,25 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-xl">
-            <h3 className="font-serif text-xl font-semibold mb-6 text-black">Chiffres clés</h3>
-            <div className="grid grid-cols-3 divide-x divide-gray-100">
-              <div className="px-4 text-center first:pl-0">
-                <div className="font-bold text-xl text-black">5-10</div>
-                <div className="text-[10px] text-gray-400 uppercase font-bold mt-1">Dossiers/an</div>
-              </div>
-              <div className="px-4 text-center">
-                <div className="font-bold text-xl text-black">45%</div>
-                <div className="text-[10px] text-gray-400 uppercase font-bold mt-1">Part max</div>
-              </div>
-              <div className="px-4 text-center last:pr-0">
-                <div className="font-bold text-xl text-black">1-10 ans</div>
-                <div className="text-[10px] text-gray-400 uppercase font-bold mt-1">Horizon</div>
-              </div>
-            </div>
+         {/* SECTION CHIFFRES CLÉS (Nouveau Composant) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
+          <StatCard 
+            number="5 à 10" 
+            label="Dossiers par an" 
+            subtext="Sélectionnés avec rigueur"
+          />
+          <StatCard 
+            number="15%" 
+            label="Rentabilité cible" 
+            subtext="TRI annuel visé"
+          />
+          <StatCard 
+            number="+20M€" 
+            label="Sous gestion" 
+            subtext="Confiance renouvelée"
+          />
           </div>
-        </div>
+          </div>
       </section>
 
       {/* --- A PROPOS --- */}
