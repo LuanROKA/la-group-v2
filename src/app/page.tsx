@@ -53,7 +53,7 @@ export default function Home() {
          {/* SECTION CHIFFRES CLÉS (Nouveau Composant) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
           <StatCard 
-            number="5 à 10" 
+            number="5-10" 
             label="Dossiers par an" 
             subtext="Sélectionnés avec rigueur"
           />
@@ -63,8 +63,8 @@ export default function Home() {
             subtext="TRI annuel visé"
           />
           <StatCard 
-            number="+20M€" 
-            label="Sous gestion" 
+            number="1-10 ans" 
+            label="Horizon" 
             subtext="Confiance renouvelée"
           />
           </div>
