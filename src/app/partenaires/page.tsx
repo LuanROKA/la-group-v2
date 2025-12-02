@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PartnerForm from "@/components/PartnerForm";
+import Image from "next/image";
 
 export default function PartenairesPage() {
   return (
