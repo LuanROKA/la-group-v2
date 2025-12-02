@@ -1,13 +1,15 @@
 import Link from "next/link";
 import PartnerForm from "@/components/PartnerForm";
-import Image from "next/image";
+import BrandLogo from '@/components/BrandLogo';
 
 export default function PartenairesPage() {
   return (
     <main className="min-h-screen bg-white selection:bg-black selection:text-white">
       {/* Navigation Simplifiée */}
       <nav className="p-6 border-b border-gray-100 flex justify-between items-center sticky top-0 bg-white/90 backdrop-blur z-50">
-        <Link href="/" className="font-serif font-bold text-xl tracking-tight">L&A Group</Link>
+        <div className="w-[140px] md:w-[180px] shrink-0">
+  <BrandLogo className="w-full h-auto text-black" />
+</div>
         <Link href="/" className="text-sm font-medium text-gray-500 hover:text-black transition">
           &larr; Retour à l'accueil
         </Link>
