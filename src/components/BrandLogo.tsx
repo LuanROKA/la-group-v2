@@ -4,40 +4,43 @@ export default function BrandLogo({ className }: { className?: string }) {
   return (
     <svg 
       xmlns="http://www.w3.org/2000/svg" 
-      // Zone de travail définie pour que tout soit bien centré
-      viewBox="0 0 300 220" 
+      // J'élargis la zone de travail (viewBox) pour accueillir le nom long
+      viewBox="0 0 500 120" 
       fill="currentColor"
-      // On s'assure que le ratio est respecté sans déformation
       preserveAspectRatio="xMidYMid meet"
       className={className}
-      // 👇 MISE À JOUR ICI : Nom accessible
-      aria-label="L&A Capital Logo"
+      aria-label="L-PARTNERS GROUP Logo"
     >
-      {/* 👇 MISE À JOUR ICI : Titre pour le référencement */}
-      <title>L&amp;A CAPITAL Logo</title>
+      <title>L-PARTNERS GROUP Logo</title>
       
-      {/* --- PARTIE HAUTE : L&A (Inchangé) --- */}
-      <text x="10" y="140" fontSize="160" fontFamily="Times New Roman, serif" fontWeight="bold">L</text>
-      <text x="105" y="140" fontSize="160" fontFamily="Times New Roman, serif" fontWeight="bold">&amp;</text>
-      <text x="200" y="140" fontSize="160" fontFamily="Times New Roman, serif" fontWeight="bold">A</text>
-      
-      {/* --- PARTIE BASSE : CAPITAL (Modification ici) --- */}
-      {/* J'ai remplacé GROUP par CAPITAL en gardant le même style */}
+      {/* LIGNE 1 : L-PARTNERS (Serif, Majestueux) */}
       <text 
-        x="150" 
-        y="185" 
-        fontSize="40" 
+        x="250" 
+        y="70" 
+        fontSize="62" 
         fontFamily="Times New Roman, serif" 
         fontWeight="bold" 
         textAnchor="middle" 
-        letterSpacing="6"
+        letterSpacing="2"
       >
-        CAPITAL
+        L-PARTNERS
       </text>
       
-      {/* La ligne de soulignement (Inchangée) */}
-      <rect x="50" y="200" width="200" height="6" />
+      {/* LIGNE 2 : GROUP (Plus petit, espacé, centré) */}
+      <text 
+        x="250" 
+        y="105" 
+        fontSize="24" 
+        fontFamily="Arial, sans-serif" 
+        fontWeight="normal" 
+        textAnchor="middle" 
+        letterSpacing="12"
+      >
+        GROUP
+      </text>
       
+      {/* Ligne de soulignement optionnelle */}
+      <rect x="150" y="115" width="200" height="3" />
     </svg>
   );
 }
