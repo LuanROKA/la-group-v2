@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  const MAINTENANCE_MODE = true; // Mettre à 'false' pour ouvrir le site
+  const MAINTENANCE_MODE = false; // Mettre à 'false' pour ouvrir le site
 
   if (!MAINTENANCE_MODE) return NextResponse.next();
 
