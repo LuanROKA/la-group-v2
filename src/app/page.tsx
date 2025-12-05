@@ -202,7 +202,7 @@ export default function Home() {
               <div className="p-6 border border-gray-200 rounded-xl bg-white hover:border-black transition-colors">
                  <strong className="block mb-2 text-black">Social</strong>
                  <a 
-                   href="https://www.instagram.com/l_associes_group/" 
+                   href="https://www.instagram.com/l_affiliates_group/" 
                    target="_blank" 
                    rel="noopener noreferrer" 
                    className="text-gray-600 hover:text-black flex items-center gap-2"
