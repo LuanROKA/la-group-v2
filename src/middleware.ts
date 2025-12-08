@@ -2,12 +2,16 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  const MAINTENANCE_MODE = false; // Mettre à 'false' pour ouvrir le site
+  // Mettre à 'false' pour ouvrir le site au public
+  const MAINTENANCE_MODE = true; 
 
-  if (!MAINTENANCE_MODE) return NextResponse.next();
+  if (!MAINTENANCE_MODE) {
+    return NextResponse.next();
+  }
 
   const { pathname } = request.nextUrl;
 
+  // On laisse passer les pages et fichiers techniques
   if (pathname.startsWith('/maintenance') || 
       pathname.startsWith('/api') || 
       pathname.startsWith('/_next') || 
